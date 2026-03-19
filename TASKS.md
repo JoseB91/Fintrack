@@ -1,4 +1,5 @@
 # Fintrack — Tasks
+
 > Versión 1.0 | Febrero 2026
 > Metodología: Spec-driven con Claude Code
 > Referencia: PRODUCT_BRIEF.md + ARCHITECTURE.md
@@ -18,13 +19,13 @@
 
 ### 1.1 Setup inicial de Supabase
 
-- [ ] **TASK-001** — Crear proyecto en Supabase
+- [x] **TASK-001** — Crear proyecto en Supabase
   - Crear proyecto nuevo en supabase.com
   - Guardar: Project URL, anon key, service role key
   - Habilitar extensiones: `uuid-ossp`, `pgcrypto`
   - _Dependencias: ninguna_
 
-- [ ] **TASK-002** — Ejecutar migration inicial
+- [x] **TASK-002** — Ejecutar migration inicial
   - Crear archivo `supabase/migrations/001_initial_schema.sql`
   - Incluir schema completo de ARCHITECTURE.md sección 2.1
   - Tablas: `gmail_tokens`, `transactions`, `budgets`, `alerts`, `poller_state`
@@ -32,12 +33,12 @@
   - Ejecutar via Supabase CLI: `supabase db push`
   - _Dependencias: TASK-001_
 
-- [ ] **TASK-003** — Configurar Row Level Security
+- [x] **TASK-003** — Configurar Row Level Security
   - Aplicar políticas RLS de ARCHITECTURE.md sección 2.2
   - Verificar que un usuario no pueda acceder a datos de otro
   - _Dependencias: TASK-002_
 
-- [ ] **TASK-004** — Crear función RPC `get_monthly_summary`
+- [x] **TASK-004** — Crear función RPC `get_monthly_summary`
   - Implementar función SQL de ARCHITECTURE.md sección 4.4
   - Testear via Supabase SQL Editor con datos de prueba
   - _Dependencias: TASK-002_
@@ -46,7 +47,7 @@
 
 ### 1.2 Autenticación Google OAuth
 
-- [ ] **TASK-005** — Configurar Google Cloud Console
+- [x] **TASK-005** — Configurar Google Cloud Console
   - Crear proyecto en console.cloud.google.com
   - Habilitar Gmail API
   - Crear OAuth 2.0 credentials (Web application)
@@ -55,7 +56,7 @@
   - Guardar Client ID y Client Secret
   - _Dependencias: TASK-001_
 
-- [ ] **TASK-006** — Configurar Google OAuth en Supabase
+- [x] **TASK-006** — Configurar Google OAuth en Supabase
   - Supabase Dashboard → Auth → Providers → Google: ON
   - Ingresar Client ID y Client Secret de TASK-005
   - Verificar redirect URL configurada
@@ -126,7 +127,7 @@
 
 ## FASE 2 — App React Native: Setup
 
-- [ ] **TASK-014** — Inicializar proyecto Expo
+- [x] **TASK-014** — Inicializar proyecto Expo
   - `npx create-expo-app@latest fintrack --template tabs`
   - Verificar que instala SDK 54 (React Native 0.81, React 19.1)
   - Configurar TypeScript estricto (`tsconfig.json`)
@@ -141,13 +142,13 @@
   - Crear archivo `.env` con variables de ARCHITECTURE.md sección 8
   - _Dependencias: TASK-001_
 
-- [ ] **TASK-015** — Configurar Supabase JS SDK
+- [x] **TASK-015** — Configurar Supabase JS SDK
   - Crear `lib/supabase.ts` con cliente configurado
   - Configurar `AsyncStorage` como storage para la sesión
   - Exportar cliente tipado
   - _Dependencias: TASK-014_
 
-- [ ] **TASK-016** — Configurar WatermelonDB
+- [x] **TASK-016** — Configurar WatermelonDB
   - Crear `db/schema.ts` con modelos locales para `Transaction`, `Budget`, `Alert`
   - Crear `db/models/Transaction.ts`, `Budget.ts`, `Alert.ts`
   - Crear `db/index.ts` con instancia de la DB
@@ -340,4 +341,4 @@ TASK-014 (Expo init)
 
 ---
 
-*Actualizar este archivo al completar cada tarea. No modificar el orden sin revisar el árbol de dependencias.*
+_Actualizar este archivo al completar cada tarea. No modificar el orden sin revisar el árbol de dependencias._

@@ -154,7 +154,7 @@
   - Crear `db/index.ts` con instancia de la DB
   - _Dependencias: TASK-014_
 
-- [ ] **TASK-017** — Configurar Expo Router: tab bar y navegación base
+- [x] **TASK-017** — Configurar Expo Router: tab bar y navegación base
   - Crear `app/(auth)/login.tsx` (pantalla vacía placeholder)
   - Crear `app/(tabs)/_layout.tsx` con 3 tabs: Dashboard, Transacciones, Ajustes
   - Crear `app/(tabs)/index.tsx`, `transactions.tsx`, `settings.tsx` (placeholders)
@@ -166,14 +166,14 @@
 
 ## FASE 3 — App React Native: Autenticación
 
-- [ ] **TASK-018** — Pantalla de Login con Google OAuth
+- [x] **TASK-018** — Pantalla de Login con Google OAuth
   - Implementar `app/(auth)/login.tsx`
   - Botón "Conectar con Gmail"
   - Llamar `supabase.auth.signInWithOAuth({ provider: 'google' })`
   - Con scope `gmail.readonly`
   - _Dependencias: TASK-015, TASK-017, TASK-006_
 
-- [ ] **TASK-019** — Manejo de sesión y redirect post-login
+- [x] **TASK-019** — Manejo de sesión y redirect post-login
   - Detectar sesión activa al abrir la app
   - Si hay sesión → redirigir a `(tabs)`
   - Si no hay sesión → redirigir a `(auth)/login`
@@ -184,7 +184,7 @@
 
 ## FASE 4 — App React Native: Pantallas principales
 
-- [ ] **TASK-020** — Pantalla Dashboard
+- [x] **TASK-020** — Pantalla Dashboard
   - Llamar RPC `get_monthly_summary` para mes actual
   - Mostrar total gastado del mes
   - Mostrar barra de progreso vs presupuesto total
@@ -193,7 +193,7 @@
   - Suscribirse a Supabase Realtime para actualización automática
   - _Dependencias: TASK-015, TASK-016, TASK-019, TASK-004_
 
-- [ ] **TASK-021** — Pantalla Transacciones: lista
+- [x] **TASK-021** — Pantalla Transacciones: lista
   - Cargar transacciones desde WatermelonDB (offline-first)
   - Sync con Supabase al montar
   - Filtros por fuente y categoría (chips horizontales)

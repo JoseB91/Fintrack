@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"/Users/josebr/Developer/ReactNative/Fintrack/fintrack/app/\\(tabs\\)/\")"
+    ]
+  }
+}
